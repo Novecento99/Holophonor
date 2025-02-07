@@ -14,7 +14,7 @@
 
 ## What is LiuMotion?
 
-LiuMotionis a framework that allows you to create real-time visualizations that respond based on the data it receives. 
+LiuMotion is a framework that allows you to create real-time visualizations that respond based on the data it receives. 
 The framework is based on the use of neural networks wrapped by the class LiuNet. 
 
 Specifically, I've tested it with a BigGAN model by Google Deepmind and a model trained by myself, feeded by data from a microphone, but it can be easily adapted to other models and data sources. 
