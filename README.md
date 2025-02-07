@@ -53,7 +53,7 @@ disclaimer: this software doesn't access any local file other than the Deepmind 
 
 0. IF you have a NVIDIA video card: download and install [cuda drivers](https://developer.nvidia.com/cuda-downloads) to improve LiuMotion performance
 
-1. download the latest release of LiuMotion from [here](https://drive.google.com/file/d/19PWCz6bl8xvrQoSWMPPgbUrheOCSqOse/view?usp=sharing) and modified version of Friture from [here](https://github.com/Novecento99/friture/actions/runs/13036946193/artifacts/2505800259)
+1. download the latest release of LiuMotion from [here](https://drive.google.com/file/d/19PWCz6bl8xvrQoSWMPPgbUrheOCSqOse/view?usp=sharing) and modified version of Friture from [here](https://github.com/Novecento99/friture)
 
 2. Unzip the downloaded file
 
