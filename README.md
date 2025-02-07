@@ -156,8 +156,7 @@ Thanks to you for reading this README.md, I hope you enjoyed it :)
 
 ## Issues and Improvements
 
-If you encounter any issues while using the framework, please open an issue on the [Issues](https://github.com/Novecento99/holophonor/issues
-) page. I will do my best to address them.
+If you encounter any issues while using the framework, please open an issue on the [Issues](https://github.com/Novecento99/LiuMotion/issues) page. I will do my best to address them.
 
 ## License
 This repository is licensed under the [LICENSE](LICENSE). See the [LICENSE](LICENSE) file for more details.
