@@ -43,7 +43,7 @@ You can also use the modified version of Friture to analyze sound in real time a
 
 ### Requirements
 
-- Windows (possibly with a NVDIA Card)
+- Windows (possibly with a NVIDIA Card)
 - A microphone (if you want to connect an input audio source)
 
 disclaimer: this software doesn't access any local file other than the Deepmind GAN, which is automatically downloadad when the software is started. Making an exe out of a python project isn't very efficient, if anyone knows how to make it more lightweight please let me know.
