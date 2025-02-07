@@ -1,6 +1,6 @@
 # LiuMotion: Live Interactive User-friendly Motion 
 
-**The idea:** connecting a Image generation model to a real-time data source to create a dynamic and interactive visualization that responds to external input. Specifically, since I'm fascinated by sound, I've tested it to an audio source using a forked version of Friture.
+**The idea:** connecting an AI image generation model to a real-time data source to create a dynamic and interactive visualization that responds to external input. Specifically, since I'm fascinated by sound, I've tested it to an audio source using a forked version of Friture.
 🔊 -> 🖼️ 
 
 3 videos of the software in action using an audio source as input are available here:
@@ -17,8 +17,8 @@
 LiuMotion is a framework that allows you to create real-time visualizations that respond based on the data it receives. 
 The framework is based on the use of neural networks wrapped by the class LiuNet. 
 
-Specifically, I've tested it with a BigGAN model by Google Deepmind and a model trained by myself, feeded by data from a microphone, but it can be easily adapted to other models and data sources. 
-For this scope, I forked and edited [friture](https://github.com/Novecento99/friture) which is able to analyze sound in real time. 
+Specifically, I've tested it with a BigGAN model by Google Deepmind and a model trained by myself, fed by data from a microphone, but it can be easily adapted to other models and data sources. 
+For this scope, I forked and edited [friture](https://github.com/Novecento99/friture) which is able to analyze sound signals in real time. 
 
 
 
@@ -46,7 +46,7 @@ You can also use the modified version of Friture to analyze sound in real time a
 - Windows (possibly with a NVIDIA Card)
 - A microphone (if you want to connect an input audio source)
 
-disclaimer: this software doesn't access any local file other than the Deepmind GAN, which is automatically downloadad when the software is started. Making an exe out of a python project isn't very efficient, if anyone knows how to make it more lightweight please let me know.
+disclaimer: this software doesn't access any local file other than the Deepmind GAN, which is automatically downloadad when the software is started. Making a .exe out of a python project isn't very efficient, if anyone knows how to make it more lightweight please let me know.
 
 
 ### How to start.
@@ -124,7 +124,7 @@ I think that LiuMotion framework could be used in various applications, includin
 
 ## Contributing
 
-If you would like to contribute to this project, please open an issue or submit a pull request. My objective is to mantaing the framework light and user friendly, so I will be happy to accept contributions that align with this objective.
+If you would like to contribute to this project, please open an issue or submit a pull request. My objective is to maintain the framework light and user friendly, so I will be happy to accept contributions that align with this objective.
 
 Performance **improvements**, bug fixes and professional documentation are welcome.
 Specifically:
