@@ -3,13 +3,18 @@
 **The idea:** connecting an AI image generation model to a real-time data source to create a dynamic and interactive visualization that responds to external input. Specifically, since I'm fascinated by sound, I've tested it to an audio source using a forked version of Friture.
 🔊 -> 🖼️ 
 
+## Things to try
+- using body tracking as input (Maybe the ballerina from While my Guitar gently weeps as test?). Maybe using the body tracking as subject sliders selector and music as the subject variation
+- understand if it could be used as a tool to approach music by deaf people? Neil Harbisson attached to his head an antenna that convert light to sound, why not the inverse?
+
+
+## Early tests
+
 3 videos of the software in action using an audio source as input are available here:
 
 [<img src="./images/GlennGould.png" width="300">](https://www.youtube.com/watch?v=OnulUUTbFZ8)
 [<img src="./images/ValtellinaP.png" width="300">](https://youtu.be/tjcyJaYmcws) 
 [<img src="./images/dad.png" width="300">](https://youtu.be/Q0MYGuqTHHc)
-
-
 
 
 ## What is LiuMotion?
