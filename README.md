@@ -12,7 +12,7 @@
 
 3 videos of the software in action using an audio source as input are available here:
 
-[<img src="./images/French79.png" width="300">](https://youtu.be/qwe9re8gq8w)
+[<img src="./images/French79.png" width="300">](https://www.youtube.com/watch?v=a0NKAyqA8PY)
 [<img src="./images/GlennGould.png" width="300">](https://www.youtube.com/watch?v=OnulUUTbFZ8)
 [<img src="./images/ValtellinaP.png" width="300">](https://youtu.be/tjcyJaYmcws) 
 [<img src="./images/dad.png" width="300">](https://youtu.be/Q0MYGuqTHHc)
