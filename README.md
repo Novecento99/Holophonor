@@ -17,7 +17,7 @@
 LiuMotionis a framework that allows you to create real-time visualizations that respond based on the data it receives. 
 The framework is based on the use of neural networks wrapped by the class LiuNet. 
 
-Specifically, I've tested it with a BigGAN model by Google Deepmind and a model trained by myself, feeded by data from a microphone, but it can be easily adapted to other models and data sources. 
+Specifically, I've tested it with a BigGAN model by Google Deepmind and a model trained by myself, feeded by data from a microphone, but it can be easily adapted to other models and data sources. Here is a list of all available subjects: [list](https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a)
 For this scope, I forked and edited [friture](https://github.com/Novecento99/friture) which is able to analyze sound in real time. 
 
 
