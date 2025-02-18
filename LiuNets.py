@@ -99,15 +99,18 @@ class LiuCustomNet(LiuNet):
 
     def digest_input(self, data):
         array = np.frombuffer(data, dtype=np.float64)
-        # if array > 128, it will be truncated
-        if len(array) > 128:
-            array = array[:128]
-        if len(array) < 128:
-            array = np.concatenate([array, np.zeros(128 - len(array))])
-
-        torch_array = torch.tensor(array).unsqueeze(0).to(device=self.device)
-        torch_array = torch_array.type(torch.FloatTensor)
-        self.noise = torch_array.clone().to(device=self.device)
+        # use first element to determine if it is a subject or noise
+        meta_data = array[0]
+        # remove the first element
+        array = array[1:]
+        if meta_data == 0:
+            if len(array) > 128:
+                array = array[:128]
+            if len(array) < 128:
+                array = np.concatenate([array, np.zeros(128 - len(array))])
+            torch_array = torch.tensor(array).unsqueeze(0).to(device=self.device)
+            torch_array = torch_array.type(torch.FloatTensor)
+            self.noise = torch_array.clone().to(device=self.device)
 
     def generate_output(self):
         with torch.no_grad():
