@@ -31,7 +31,7 @@ class LiuMotion:
     def udp_listener(self):
         print("UDP listener started...")
         while True:
-            data = self.udp_receiver.receive_data(2000)
+            data = self.udp_receiver.receive_data(16000)
             start = time.time()
             if data:
                 self.LiuGan.digest_input(data)

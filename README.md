@@ -12,9 +12,11 @@
 
 3 videos of the software in action using an audio source as input are available here:
 
+[<img src="./images/French79.png" width="300">](https://youtu.be/qwe9re8gq8w)
 [<img src="./images/GlennGould.png" width="300">](https://www.youtube.com/watch?v=OnulUUTbFZ8)
 [<img src="./images/ValtellinaP.png" width="300">](https://youtu.be/tjcyJaYmcws) 
 [<img src="./images/dad.png" width="300">](https://youtu.be/Q0MYGuqTHHc)
+
 
 
 ## What is LiuMotion?
@@ -58,7 +60,7 @@ disclaimer: this software doesn't access any local file other than the Deepmind 
 
 0. IF you have a NVIDIA video card: download and install [cuda drivers](https://developer.nvidia.com/cuda-downloads) to improve LiuMotion performance
 
-1. download the latest release of LiuMotion from [here](https://drive.google.com/file/d/19PWCz6bl8xvrQoSWMPPgbUrheOCSqOse/view?usp=sharing) and modified version of Friture from [here](https://github.com/Novecento99/friture)
+1. download the latest release of LiuMotion from [here](https://drive.google.com/file/d/19PWCz6bl8xvrQoSWMPPgbUrheOCSqOse/view?usp=sharing) and modified version of Friture from [here](https://github.com/Novecento99/friture/releases/download/v0.51/friture-zip.zip)
 
 2. Unzip the downloaded file
 
