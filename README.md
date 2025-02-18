@@ -1,7 +1,14 @@
 # LiuMotion: Live Interactive User-friendly Motion 
 
-**The idea:** connecting a Image generation model to a real-time data source to create a dynamic and interactive visualization that responds to external input. Specifically, since I'm fascinated by sound, I've tested it to an audio source using a forked version of Friture.
+**The idea:** connecting an AI image generation model to a real-time data source to create a dynamic and interactive visualization that responds to external input. Specifically, since I'm fascinated by sound, I've tested it to an audio source using a forked version of Friture.
 🔊 -> 🖼️ 
+
+## Things to try
+- using body tracking as input (Maybe the ballerina from While my Guitar gently weeps as test?). Maybe using the body tracking as subject sliders selector and music as the subject variation
+- understand if it could be used as a tool to approach music by deaf people? Neil Harbisson attached to his head an antenna that convert light to sound, why not the inverse?
+
+
+## Early tests
 
 3 videos of the software in action using an audio source as input are available here:
 
@@ -10,15 +17,13 @@
 [<img src="./images/dad.png" width="300">](https://youtu.be/Q0MYGuqTHHc)
 
 
-
-
 ## What is LiuMotion?
 
-LiuMotionis a framework that allows you to create real-time visualizations that respond based on the data it receives. 
+LiuMotion is a framework that allows you to create real-time visualizations that respond based on the data it receives. 
 The framework is based on the use of neural networks wrapped by the class LiuNet. 
 
-Specifically, I've tested it with a BigGAN model by Google Deepmind and a model trained by myself, feeded by data from a microphone, but it can be easily adapted to other models and data sources. Here is a list of all available subjects: [list](https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a)
-For this scope, I forked and edited [friture](https://github.com/Novecento99/friture) which is able to analyze sound in real time. 
+Specifically, I've tested it with a BigGAN model by Google Deepmind and a model trained by myself, fed by data from a microphone, but it can be easily adapted to other models and data sources. Here is a list of all available subjects: [list](https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a)
+For this scope, I forked and edited [friture](https://github.com/Novecento99/friture) which is able to analyze sound signals in real time. 
 
 
 
@@ -43,17 +48,17 @@ You can also use the modified version of Friture to analyze sound in real time a
 
 ### Requirements
 
-- Windows (possibly with a NVDIA Card)
+- Windows (possibly with a NVIDIA Card)
 - A microphone (if you want to connect an input audio source)
 
-disclaimer: this software doesn't access any local file other than the Deepmind GAN, which is automatically downloadad when the software is started. Making an exe out of a python project isn't very efficient, if anyone knows how to make it more lightweight please let me know.
+disclaimer: this software doesn't access any local file other than the Deepmind GAN, which is automatically downloadad when the software is started. Making a .exe out of a python project isn't very efficient, if anyone knows how to make it more lightweight please let me know.
 
 
 ### How to start.
 
 0. IF you have a NVIDIA video card: download and install [cuda drivers](https://developer.nvidia.com/cuda-downloads) to improve LiuMotion performance
 
-1. download the latest release of LiuMotion from [here](https://drive.google.com/file/d/19PWCz6bl8xvrQoSWMPPgbUrheOCSqOse/view?usp=sharing) and modified version of Friture from [here](https://github.com/Novecento99/friture/actions/runs/13036946193/artifacts/2505800259)
+1. download the latest release of LiuMotion from [here](https://drive.google.com/file/d/19PWCz6bl8xvrQoSWMPPgbUrheOCSqOse/view?usp=sharing) and modified version of Friture from [here](https://github.com/Novecento99/friture)
 
 2. Unzip the downloaded file
 
@@ -124,7 +129,7 @@ I think that LiuMotion framework could be used in various applications, includin
 
 ## Contributing
 
-If you would like to contribute to this project, please open an issue or submit a pull request. My objective is to mantaing the framework light and user friendly, so I will be happy to accept contributions that align with this objective.
+If you would like to contribute to this project, please open an issue or submit a pull request. My objective is to maintain the framework light and user friendly, so I will be happy to accept contributions that align with this objective.
 
 Performance **improvements**, bug fixes and professional documentation are welcome.
 Specifically:
@@ -156,8 +161,7 @@ Thanks to you for reading this README.md, I hope you enjoyed it :)
 
 ## Issues and Improvements
 
-If you encounter any issues while using the framework, please open an issue on the [Issues](https://github.com/Novecento99/holophonor/issues
-) page. I will do my best to address them.
+If you encounter any issues while using the framework, please open an issue on the [Issues](https://github.com/Novecento99/LiuMotion/issues) page. I will do my best to address them.
 
 ## License
 This repository is licensed under the [LICENSE](LICENSE). See the [LICENSE](LICENSE) file for more details.
