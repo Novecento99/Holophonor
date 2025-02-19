@@ -111,7 +111,7 @@ The performances of the framework are highly dependent on the hardware you are u
 
 | Device  | Type | Fps | Latency | LiuNet type |
 |----------|----------|----------|----------|----------|
-|   GTX970  |   GPU  |   Row 1   |   Row 1  |  BigGan  | 
+|   RTX4070S  |   GPU  |   30   |   47ms  |  BigGan256  | 
 |   RTX4060 |   GPU   |   25.6  |   56ms  |   BigGan256  | 
 |   RTXA1000 (mobile) |   GPU   |   24 |   42ms  |    BigGan256  | 
 | i7-8700K|   CPU  |   2  |   536ms  |  BigGan256  | 
