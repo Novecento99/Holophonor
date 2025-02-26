@@ -2,6 +2,10 @@
 
 import os
 import platform
+import sys
+
+# Add the path to the LiuMotion module
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
 import liumotion  # for the version number
 from PyInstaller.utils.hooks import collect_data_files
