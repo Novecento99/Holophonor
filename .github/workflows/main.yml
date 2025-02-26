@@ -89,24 +89,29 @@ jobs:
     runs-on: macos-13
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
 
-    - name: Display Python version
-      run: python -c "import sys; print(sys.version)"
+      - name: Display Python version
+        run: python -c "import sys; print(sys.version)"
 
-    - name: Build
-      run: source ./.github/workflows/install-macos.sh
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install setuptools
 
-    - name: Upload dmg
-      uses: actions/upload-artifact@v4
-      with:
-        name: liumotion-dmg
-        path: liumotion*.dmg
-        if-no-files-found: error
+      - name: Build
+        run: source ./.github/workflows/install-macos.sh
+
+      - name: Upload dmg
+        uses: actions/upload-artifact@v4
+        with:
+          name: liumotion-dmg
+          path: liumotion*.dmg
+          if-no-files-found: error
 
   release:
     name: Create release and upload artifacts
