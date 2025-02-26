@@ -1,0 +1,137 @@
+name: build
+
+on: [push, pull_request]
+
+jobs:
+  build-windows:
+    runs-on: windows-2019
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+
+    - name: Display Python version
+      run: python -c "import sys; print(sys.version)"
+
+    - name: Inspect Build Environment
+      shell: powershell
+      run: Write-Host $env:PATH
+
+    - name: Enable Visual Studio Developer Command Prompt
+      uses: ilammy/msvc-dev-cmd@v1
+
+    - name: Build
+      shell: powershell
+      run: ./.github/workflows/install-windows.ps1
+
+    - name: Upload liumotion appx
+      uses: actions/upload-artifact@v4
+      with:
+        name: liumotion-appx
+        path: dist/liumotion-*.appx
+        if-no-files-found: error
+
+    - name: Upload liumotion msi
+      uses: actions/upload-artifact@v4
+      with:
+        name: liumotion-msi
+        path: dist/liumotion-*.msi
+        if-no-files-found: error
+
+    - name: Upload liumotion zip
+      uses: actions/upload-artifact@v4
+      with:
+        name: liumotion-zip
+        path: dist/liumotion.zip
+        if-no-files-found: error
+
+    - name: Upload import xref
+      uses: actions/upload-artifact@v4
+      with:
+        name: liumotion-import-xref
+        path: build/liumotion/xref-liumotion.html
+        if-no-files-found: error
+
+    - name: Upload import graph
+      uses: actions/upload-artifact@v4
+      with:
+        name: liumotion-import-graph
+        path: build/liumotion/graph-liumotion.dot
+        if-no-files-found: error
+
+  build-linux:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+
+    - name: Display Python version
+      run: python -c "import sys; print(sys.version)"
+
+    - name: Build
+      run: source ./.github/workflows/install-linux.sh
+
+    - name: Upload appImage
+      uses: actions/upload-artifact@v4
+      with:
+        name: liumotion-appImage
+        path: liumotion*.AppImage
+        if-no-files-found: error
+
+  build-macos:
+    runs-on: macos-13
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+
+    - name: Display Python version
+      run: python -c "import sys; print(sys.version)"
+
+    - name: Build
+      run: source ./.github/workflows/install-macos.sh
+
+    - name: Upload dmg
+      uses: actions/upload-artifact@v4
+      with:
+        name: liumotion-dmg
+        path: liumotion*.dmg
+        if-no-files-found: error
+
+  release:
+    name: Create release and upload artifacts
+    runs-on: ubuntu-latest
+    needs: [build-windows, build-linux, build-macos]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download all workflow run artifacts
+        uses: actions/download-artifact@v4
+
+      - name: Display structure of downloaded files
+        run: ls -R
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/') # Limit releases to pushes to tags
+        with:
+          draft: true
+          prerelease: false
+          fail_on_unmatched_files: true
+          files: |
+            **/liumotion*.msi
+            **/liumotion*.dmg
+            **/liumotion*.AppImage
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
