@@ -3,6 +3,8 @@
 **The idea:** connecting an AI image generation model to a real-time data source to create a dynamic and interactive visualization that responds to external input. Specifically, since I'm fascinated by sound, I've tested it to an audio source using a forked version of Friture.
 🔊 -> 🖼️ 
 
+current objective: mac-os support
+
 ## Things to try
 - using body tracking as input (Maybe the ballerina from While my Guitar gently weeps as test?). Maybe using the body tracking as subject sliders selector and music as the subject variation
 - understand if it could be used as a tool to approach music by deaf people? Neil Harbisson attached to his head an antenna that convert light to sound, why not the inverse?
