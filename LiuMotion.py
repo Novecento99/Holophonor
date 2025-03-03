@@ -16,7 +16,7 @@ print("Modules imported...")
 # python 3.12
 # media feature pack for windows N
 class LiuMotion:
-    def __init__(self, LiuGan, udpReceiver, pixel_dimension):
+    def __init__(self, LiuGan, udpReceiver, pixel_dimension, fullscreen=False):
 
         self.LiuGan = LiuGan
         self.udp_receiver = udpReceiver
@@ -27,6 +27,7 @@ class LiuMotion:
         self.gen_delay = []
         self.udp_delay = []
         self.shw_delay = []
+        self.fullscreen = fullscreen
 
     def udp_listener(self):
         print("UDP listener started...")
@@ -47,10 +48,16 @@ class LiuMotion:
                 self.gen_delay.append(1000 * (time.time() - start))
 
     def main(self):
-        cv2.namedWindow("LiuMotion", cv2.WINDOW_NORMAL)
-        cv2.resizeWindow(
-            "LiuMotion", self.window_dimension, self.window_dimension
-        )  # Set initial window size
+        if self.fullscreen:
+            cv2.namedWindow("LiuMotion", cv2.WND_PROP_FULLSCREEN)
+            cv2.setWindowProperty(
+                "LiuMotion", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN
+            )
+        else:
+            cv2.namedWindow("LiuMotion", cv2.WINDOW_NORMAL)
+            cv2.resizeWindow(
+                "LiuMotion", self.window_dimension, self.window_dimension
+            )  # Set initial window size
 
         udp_notes = threading.Thread(target=self.udp_listener)
         udp_notes.daemon = True
@@ -72,11 +79,33 @@ class LiuMotion:
 
             start = time.time()
             image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
-            image = cv2.resize(
-                image,
-                (self.window_dimension, self.window_dimension),
-                interpolation=cv2.INTER_CUBIC,
-            )
+            if self.fullscreen:
+                screen_height, screen_width = (
+                    cv2.getWindowImageRect("LiuMotion")[3],
+                    cv2.getWindowImageRect("LiuMotion")[2],
+                )
+                aspect_ratio = image.shape[1] / image.shape[0]
+                new_width = int(screen_height * aspect_ratio)
+                new_height = screen_height
+                if new_width > screen_width:
+                    new_width = screen_width
+                    new_height = int(screen_width / aspect_ratio)
+                resized_image = cv2.resize(
+                    image, (new_width, new_height), interpolation=cv2.INTER_CUBIC
+                )
+                top = (screen_height - new_height) // 2
+                bottom = screen_height - new_height - top
+                left = (screen_width - new_width) // 2
+                right = screen_width - new_width - left
+                image = cv2.copyMakeBorder(
+                    resized_image, top, bottom, left, right, cv2.BORDER_CONSTANT
+                )
+            else:
+                image = cv2.resize(
+                    image,
+                    (self.window_dimension, self.window_dimension),
+                    interpolation=cv2.INTER_CUBIC,
+                )
             cv2.imshow("LiuMotion", image)
             cv2.waitKey(5)
             self.shw_delay.append(1000 * (time.time() - start))
@@ -125,6 +154,7 @@ if __name__ == "__main__":
     print("LiuNet created...")
     udpReceiver = UtilityUdp.UDPReceiver("127.0.0.1", 5005)
     print("UDPReceiver created...")
-    motion = LiuMotion(LiuNet, udpReceiver, 800)
+    fullscreen = "--fullscreen" in sys.argv
+    motion = LiuMotion(LiuNet, udpReceiver, 800, fullscreen=True)
     print("LiuMotion created...")
     motion.main()
