@@ -16,8 +16,22 @@ print("Modules imported...")
 # python 3.12
 # media feature pack for windows N
 class LiuMotion:
-    def __init__(self, LiuGan, udpReceiver, pixel_dimension, fullscreen=False):
+    """
+    LiuMotion class handles the main functionality of the application, including
+    receiving UDP data, generating images using neural networks, and displaying
+    the images in a window.
+    """
 
+    def __init__(self, LiuGan, udpReceiver, pixel_dimension, fullscreen=False):
+        """
+        Initialize the LiuMotion class.
+
+        Args:
+            LiuGan: The neural network model for generating images.
+            udpReceiver: The UDP receiver for receiving data.
+            pixel_dimension: The dimension of the window in pixels.
+            fullscreen: Boolean indicating whether to display in fullscreen mode.
+        """
         self.LiuGan = LiuGan
         self.udp_receiver = udpReceiver
 
@@ -30,6 +44,9 @@ class LiuMotion:
         self.fullscreen = fullscreen
 
     def udp_listener(self):
+        """
+        Listen for UDP data and process it using the neural network model.
+        """
         print("UDP listener started...")
         while True:
             data = self.udp_receiver.receive_data(16000)
@@ -40,6 +57,9 @@ class LiuMotion:
                 self.udp_delay.append(1000 * (time.time() - start))
 
     def neural_use(self):
+        """
+        Generate images using the neural network model.
+        """
         print("Image generation started...")
         with torch.no_grad():
             while True:
@@ -48,6 +68,9 @@ class LiuMotion:
                 self.gen_delay.append(1000 * (time.time() - start))
 
     def main(self):
+        """
+        Main loop for displaying the generated images in a window.
+        """
         if self.fullscreen:
             cv2.namedWindow("LiuMotion", cv2.WND_PROP_FULLSCREEN)
             cv2.setWindowProperty(
@@ -155,6 +178,6 @@ if __name__ == "__main__":
     udpReceiver = UtilityUdp.UDPReceiver("127.0.0.1", 5005)
     print("UDPReceiver created...")
     fullscreen = "--fullscreen" in sys.argv
-    motion = LiuMotion(LiuNet, udpReceiver, 800, fullscreen=True)
+    motion = LiuMotion(LiuNet, udpReceiver, 800, fullscreen=False)
     print("LiuMotion created...")
     motion.main()
