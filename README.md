@@ -168,13 +168,16 @@ Thanks to you for reading this README.md, I hope you enjoyed it :)
 If you encounter any issues while using the framework, please open an issue on the [Issues](https://github.com/Novecento99/LiuMotion/issues) page. I will do my best to address them.
 
 ## License
-This repository is licensed under the [LICENSE](LICENSE). See the [LICENSE](LICENSE) file for more details.
+This repository is licensed under a dual license:
+
+- [GPL v3](LICENSE)
+- For commercial use, please contact me at [gabrieleliu4@gmail.com](mailto:gabrieleliu4@gmail.com). 
 
 While I would be happy to see this project used in various applications, I would appreciate it if you could credit me and provide a link to this repository if you use it in your projects.
 
 Please  consider giving a star ⭐ to this repository! 
 ## Author 
-This project was developed by L. Gabriele, inspired by the love for math and sound.  For any inquiries or contributions, please contact [gabrieleliu4@gmail.com](mailto:gabrieleboodman@gmail.com). 
+This project was developed by L. Gabriele, inspired by the love for math and sound.  For any inquiries or contributions, please contact [gabrieleliu4@gmail.com](mailto:gabrieleliu4@gmail.com). 
 04/02/2025
 
 ## Post Scriptum
