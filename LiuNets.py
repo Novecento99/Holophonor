@@ -37,28 +37,35 @@ class LiuBigganNet(LiuNet):
 
     def digest_input(self, data):
         if data:
-            array = np.frombuffer(data, dtype=np.float64)
-            # use first element to determine if it is a subject or noise
-            meta_data = array[0]
-            # remove the first element
-            array = array[1:]
-            if meta_data == 1:
+            try:
+                array = np.frombuffer(data, dtype=np.float64)
+                # use first element to determine if it is a subject or noise
+                meta_data = array[0]
+                # remove the first element
+                array = array[1:]
+                if meta_data == 1:
 
-                torch_array = torch.tensor(array).unsqueeze(0).to(device=self.device)
-                torch_array = torch_array.type(torch.FloatTensor)
-                self.subject = torch_array.clone().to(device=self.device)
-                # index = int(round(array[0]))
-                # classe_ = torch.zeros(1, 1000)
-                # classe_[0, index] = 1
-                # self.subject = classe_
-            if meta_data == 0:
-                if len(array) > 128:
-                    array = array[:128]
-                if len(array) < 128:
-                    array = np.concatenate([array, np.zeros(128 - len(array))])
-                torch_array = torch.tensor(array).unsqueeze(0).to(device=self.device)
-                torch_array = torch_array.type(torch.FloatTensor)
-                self.noise = torch_array.clone().to(device=self.device)
+                    torch_array = (
+                        torch.tensor(array).unsqueeze(0).to(device=self.device)
+                    )
+                    torch_array = torch_array.type(torch.FloatTensor)
+                    self.subject = torch_array.clone().to(device=self.device)
+                    # index = int(round(array[0]))
+                    # classe_ = torch.zeros(1, 1000)
+                    # classe_[0, index] = 1
+                    # self.subject = classe_
+                if meta_data == 0:
+                    if len(array) > 128:
+                        array = array[:128]
+                    if len(array) < 128:
+                        array = np.concatenate([array, np.zeros(128 - len(array))])
+                    torch_array = (
+                        torch.tensor(array).unsqueeze(0).to(device=self.device)
+                    )
+                    torch_array = torch_array.type(torch.FloatTensor)
+                    self.noise = torch_array.clone().to(device=self.device)
+            except Exception as e:
+                print(e)
 
     def generate_output(self):
         with torch.no_grad():
