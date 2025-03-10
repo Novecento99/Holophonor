@@ -1,10 +1,15 @@
-print("LiuMotion is importing modules...")
+print("LiuMotion is importing torch...")
 import torch
+
+print("LiuMotion is importing cv2...")
+import cv2
+
+print("LiuMotion is importing LiuNets...")
+import LiuNets
 import threading
 import time
-import cv2
+
 import UtilityUdp
-import LiuNets
 import sys
 
 print("Modules imported...")
