@@ -10,6 +10,13 @@ Discord community: https://discord.gg/YpamA34C3
 
 Holophonor is a software that generates images in real time. It leverages neural networks (a subset of the artificial intelligence domain) to do so. By default, it uses Google Deepmind BigGan which comprehends [1000 subjects](https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a). Since I wanted to use it with audio as input source, I've alsoforked and edited [friture](https://github.com/Novecento99/friture), a software able to analyze audio in real time.
 
+## How does it work?
+![alt text](./images/Flowchart.png)
+
+The framework works by capturing data from an UDP connection and feeding it to the GAN model. The model generates an image based on the input data, which is then displayed on the screen. The process is repeated in real-time, creating a dynamic and interactive visualization that responds to external input.
+
+Specifically, the framework can be used to create visualizations that respond to audio input, such as music or environmental sounds. The visualizations can be customized by changing the LiuNet model, the input data source, and other parameters
+
 ## Media
 
 4 videos of the software in action using an audio source as input are available here:
@@ -22,12 +29,7 @@ Holophonor is a software that generates images in real time. It leverages neural
 
 
 
-## How does it work?
-![alt text](./images/Flowchart.png)
-
-The framework works by capturing data from an UDP connection and feeding it to the GAN model. The model generates an image based on the input data, which is then displayed on the screen. The process is repeated in real-time, creating a dynamic and interactive visualization that responds to external input.
-
-Specifically, the framework can be used to create visualizations that respond to audio input, such as music or environmental sounds. The visualizations can be customized by changing the LiuNet model, the input data source, and other parameters.
+.
 
 
 # How to run Holophonor
