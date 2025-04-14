@@ -5,6 +5,11 @@
 ![img](https://i.redd.it/fpvub4r4jvka1.gif)
 
 Discord community: https://discord.gg/YpamA34C3
+
+## What is Holophonor?
+
+Holophonor is a software that generates images in real time. It leverages neural networks (a subset of the artificial intelligence domain) to do so. By default, it uses Google Deepmind BigGan which comprehends [1000 subjects](https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a). Since I wanted to use it with audio as input source, I've alsoforked and edited [friture](https://github.com/Novecento99/friture), a software able to analyze audio in real time.
+
 ## Media
 
 4 videos of the software in action using an audio source as input are available here:
@@ -16,9 +21,6 @@ Discord community: https://discord.gg/YpamA34C3
 
 
 
-## What is Holophonor?
-
-Holophonor is a software that generates images in real time. It leverages neural networks (a subset of the artificial intelligence domain) to do so. By default, it uses Google Deepmind BigGan which comprehends [1000 subjects](https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a). Since I wanted to use it with audio as input source, I've alsoforked and edited [friture](https://github.com/Novecento99/friture), a software able to analyze audio in real time.
 
 ## How does it work?
 ![alt text](./images/Flowchart.png)
