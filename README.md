@@ -1,18 +1,11 @@
-# LiuMotion: Live Interactive User-friendly Motion 
+# Holophonor
 
-**The idea:** connecting an AI image generation model to a real-time data source to create a dynamic and interactive visualization that responds to external input. Specifically, since I'm fascinated by sound, I've tested it to an audio source using a forked version of Friture.
-🔊 -> 🖼️ 
-
-current objective: midi input to control parameters , mac-os support
-
-## Things to try
-- using body tracking as input (Maybe the ballerina from While my Guitar gently weeps as test?). Maybe using the body tracking as subject sliders selector and music as the subject variation
-- understand if it could be used as a tool to approach music by deaf people? Neil Harbisson attached to his head an antenna that convert light to sound, why not the inverse?
+**The idea:** The idea was born when I asked myself: what would happen if I connect a live audio source to a neural network? Well, this repository is the answer. 
 
 
-## Early tests
+## Media
 
-3 videos of the software in action using an audio source as input are available here:
+4 videos of the software in action using an audio source as input are available here:
 
 [<img src="./images/French79.png" width="300">](https://www.youtube.com/watch?v=a0NKAyqA8PY)
 [<img src="./images/GlennGould.png" width="300">](https://www.youtube.com/watch?v=OnulUUTbFZ8)
@@ -21,9 +14,9 @@ current objective: midi input to control parameters , mac-os support
 
 
 
-## What is LiuMotion?
+## What is Holophonor?
 
-LiuMotion is a framework that allows you to create real-time visualizations that respond based on the data it receives. 
+Holophonor is a framework that allows you to create real-time visualizations that respond based on the data it receives. 
 The framework is based on the use of neural networks wrapped by the class LiuNet. 
 
 Specifically, I've tested it with a BigGAN model by Google Deepmind and a model trained by myself, fed by data from a microphone, but it can be easily adapted to other models and data sources. Here is a list of all available subjects: [list](https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a)
@@ -40,11 +33,11 @@ The framework works by capturing data from an UDP connection and feeding it to t
 Specifically, the framework can be used to create visualizations that respond to audio input, such as music or environmental sounds. The visualizations can be customized by changing the LiuNet model, the input data source, and other parameters.
 
 
-# How to run LiuMotion
+# How to run Holophonor
 
-LiuMotion can be run by following the instructions below.
+Holophonor can be run by following the instructions below.
 
-I've built an executable version of LiuMotion and Friture to make it easier to use for non-developers. It's really easy to use, just download the executable and run it. You won't be able to train your model, but you can use GoogleDeepMind BigGan model. 
+I've built an executable version of Holophonor and Friture to make it easier to use for non-developers. It's really easy to use, just download the executable and run it. You won't be able to train your model, but you can use GoogleDeepMind BigGan model. 
 
 You can also use the modified version of Friture to analyze sound in real time and therefore use a microphone as input data.
 
@@ -60,13 +53,13 @@ disclaimer: this software doesn't access any local file other than the Deepmind 
 
 ### How to start.
 
-0. IF you have a NVIDIA video card: download and install [cuda drivers](https://developer.nvidia.com/cuda-downloads) to improve LiuMotion performance
+0. IF you have a NVIDIA video card: download and install [cuda drivers](https://developer.nvidia.com/cuda-downloads) to improve Holophonor performance
 
-1. download the latest release of LiuMotion from [here](https://drive.google.com/file/d/19PWCz6bl8xvrQoSWMPPgbUrheOCSqOse/view?usp=sharing) and modified version of Friture from [here](https://github.com/Novecento99/friture/releases)
+1. download the latest release of Holophonor from [here](https://drive.google.com/file/d/19PWCz6bl8xvrQoSWMPPgbUrheOCSqOse/view?usp=sharing) and modified version of Friture from [here](https://github.com/Novecento99/friture/releases)
 
 2. Unzip the downloaded file
 
-3. Open the folder and double click on LiuMotion.exe
+3. Open the folder and double click on Holophonor.exe
 
 4. If you want to use a microphone, open Friture and select the microphone you want to use.
 
@@ -87,7 +80,7 @@ You will need problably need also to download Microsoft C++ BuildTools, the most
 
 IF you are using a N Windows version, you'll need to install Windows Media Feature Pack, you can find how to install it [here](https://www.microsoft.com/en-us/software-download/mediafeaturepack)
 
-Also if you have a nvidia graphic card, you can install [cuda drivers](https://developer.nvidia.com/cuda-downloads) to (drastically) improve LiuMotion performance
+Also if you have a nvidia graphic card, you can install [cuda drivers](https://developer.nvidia.com/cuda-downloads) to (drastically) improve Holophonor performance
 
 
 
@@ -100,7 +93,7 @@ Training a GAN model can be a complex and time-consuming process. The code is un
 
 ### LiuNet class
 
-The LiuMotion class is the main class of the framework. LiuNet instead is a wrapper for neural nets, it allows you to easily load a model and generate images based on input data. I made it to be able to incorporate different models in the framework without having to change the code too much.
+The Holophonor class is the main class of the framework. LiuNet instead is a wrapper for neural nets, it allows you to easily load a model and generate images based on input data. I made it to be able to incorporate different models in the framework without having to change the code too much.
 (next to implement: pixel diffusion model, VQ-VAE, etc.)
 
 ## Performances
@@ -121,14 +114,12 @@ The performances of the framework are highly dependent on the hardware you are u
 ## Possible fields of application 
 
 
-I think that LiuMotion framework could be used in various applications, including:
+I think that Holophonor framework could be used in various applications, including:
 - **Live Performances**: Enhance live music performances with real-time visualizations that respond to audio
 - **Medical Research**:  I wonder if it's possible to use this visualization to help people with hearing problems.
 - **Music Videos**: Generate dynamic and unique visuals for music videos that sync with the audio track.
 - **Game Development**: Create interactive visualizations for games that respond to player input.
-- **Musician Practice**: Use the framework to create visualizations that help musicians practice their pieces through a visual representation of the sound.
-
-- **- we'll see** 
+- **Musician Practice**: Use the framework to create visualizations that help musicians practice their pieces through a visual representation of the sound. 
 
 
 ## Contributing
@@ -165,7 +156,7 @@ Thanks to you for reading this README.md, I hope you enjoyed it :)
 
 ## Issues and Improvements
 
-If you encounter any issues while using the framework, please open an issue on the [Issues](https://github.com/Novecento99/LiuMotion/issues) page. I will do my best to address them.
+If you encounter any issues while using the framework, please open an issue on the [Issues](https://github.com/Novecento99/Holophonor/issues) page. I will do my best to address them.
 
 ## License
 This repository is licensed under a dual license:
