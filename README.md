@@ -4,7 +4,7 @@
 
 ![img](https://i.redd.it/fpvub4r4jvka1.gif)
 
-Discord community: ![click here](https://discord.gg/YpamA34C3h)
+Discord community: https://discord.gg/YpamA34C3
 ## Media
 
 4 videos of the software in action using an audio source as input are available here:
