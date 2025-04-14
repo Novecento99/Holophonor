@@ -1,6 +1,6 @@
 # Holophonor
 
-**The idea:** The idea was born when I asked myself: what would happen if I connect a live audio source to a neural network? Well, this repository is the answer. 
+**The idea:** The idea was born when I asked myself: what would happen if I connect a live audio source to a neural network? Well, this repository is the answer. I've lately found out that it resembles for many people [the Futurama holophonor instrument](https://www.youtube.com/watch?v=gPn8ytmg0pE), hence the name of this repository.
 
 
 ## Media
@@ -170,9 +170,5 @@ Please  consider giving a star ⭐ to this repository!
 ## Author 
 This project was developed by L. Gabriele, inspired by the love for math and sound.  For any inquiries or contributions, please contact [gabrieleliu4@gmail.com](mailto:gabrieleliu4@gmail.com). 
 04/02/2025
-
-## Post Scriptum
-
-This software was initially named "holophonor", in honor of the instrument from the TV show [Futurama](https://www.youtube.com/watch?v=gPn8ytmg0pE). I then decided to change it to avoid any copyright issues. 
 
 
