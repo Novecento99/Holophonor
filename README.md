@@ -1,7 +1,7 @@
 # Holophonor
 
 **The idea:** The idea was born when I asked myself: what would happen if I connect a live audio source to a neural network? Well, this repository is the answer. I've lately found out that it resembles for many people [the Futurama holophonor instrument](https://www.youtube.com/watch?v=gPn8ytmg0pE), hence the name of this repository.
-
+![img](https://i.redd.it/fpvub4r4jvka1.gif)
 
 ## Media
 
@@ -16,14 +16,7 @@
 
 ## What is Holophonor?
 
-Holophonor is a framework that allows you to create real-time visualizations that respond based on the data it receives. 
-The framework is based on the use of neural networks wrapped by the class LiuNet. 
-
-Specifically, I've tested it with a BigGAN model by Google Deepmind and a model trained by myself, fed by data from a microphone, but it can be easily adapted to other models and data sources. Here is a list of all available subjects: [list](https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a)
-For this scope, I forked and edited [friture](https://github.com/Novecento99/friture) which is able to analyze sound signals in real time. 
-
-
-
+Holophonor is a software that generates images in real time. It leverages neural networks (a subset of the artificial intelligence domain) to do so. By default, it uses Google Deepmind BigGan which comprehends [1000 subjects](https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a). Since I wanted to use it with audio as input source, I've alsoforked and edited [friture](https://github.com/Novecento99/friture), a software able to analyze audio in real time.
 
 ## How does it work?
 ![alt text](./images/Flowchart.png)
