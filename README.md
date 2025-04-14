@@ -1,6 +1,7 @@
 # Holophonor
 
 **The idea:** The idea was born when I asked myself: what would happen if I connect a live audio source to a neural network? Well, this repository is the answer. I've lately found out that it resembles for many people [the Futurama holophonor instrument](https://www.youtube.com/watch?v=gPn8ytmg0pE), hence the name of this repository.
+
 ![img](https://i.redd.it/fpvub4r4jvka1.gif)
 
 ## Media
@@ -76,22 +77,13 @@ IF you are using a N Windows version, you'll need to install Windows Media Featu
 Also if you have a nvidia graphic card, you can install [cuda drivers](https://developer.nvidia.com/cuda-downloads) to (drastically) improve Holophonor performance
 
 
-
-### how to train your model
-
-To train your model, you need to have a dataset of images. You can use the script `train.py` to train your model. 
-
-Training a GAN model can be a complex and time-consuming process. The code is under development, so I would recommend using a pre-trained model if you are not familiar with GANs.
-
-
 ### LiuNet class
 
 The Holophonor class is the main class of the framework. LiuNet instead is a wrapper for neural nets, it allows you to easily load a model and generate images based on input data. I made it to be able to incorporate different models in the framework without having to change the code too much.
-(next to implement: pixel diffusion model, VQ-VAE, etc.)
 
 ## Performances
 
-The performances of the framework are highly dependent on the hardware you are using. Hardware knowledge is not my strong point, so I will be happy to accept contributions to this section, especially if you have tested the framework on different hardware configurations.
+The performances of the framework are highly dependent on the hardware you are using. 
 
 **The main question is: on which parameters does the performance of the framework depend?**
 
