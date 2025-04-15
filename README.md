@@ -13,7 +13,7 @@ Holophonor is a software that generates images in real time. It leverages neural
 ## How does it work?
 ![alt text](./images/Flowchart.png)
 
-The framework works by capturing data from an UDP connection and feeding it to the GAN model. The model generates an image based on the input data, which is then displayed on the screen. The process is repeated in real-time, creating a dynamic and interactive visualization that responds to external input.
+The software listens for data from an UDP connection. When received, it parses the data and feed it to the AI model which generates an image, which is then displayed on the screen. The process is repeated in real-time, creating a dynamic and interactive visualization that responds to external input.
 
 Specifically, the framework can be used to create visualizations that respond to audio input, such as music or environmental sounds. The visualizations can be customized by changing the LiuNet model, the input data source, and other parameters
 
@@ -27,20 +27,11 @@ Specifically, the framework can be used to create visualizations that respond to
 [<img src="./images/dad.png" width="300">](https://youtu.be/Q0MYGuqTHHc)
 
 
-
-
-.
-
-
 # How to run Holophonor
 
-Holophonor can be run by following the instructions below.
+I've built an executable version of Holophonor and Friture to make it easier to use for non-developers. It's really easy to use, just download the executable and run it. You won't be able to train your model, but you can use GoogleDeepMind BigGan model.
 
-I've built an executable version of Holophonor and Friture to make it easier to use for non-developers. It's really easy to use, just download the executable and run it. You won't be able to train your model, but you can use GoogleDeepMind BigGan model. 
-
-You can also use the modified version of Friture to analyze sound in real time and therefore use a microphone as input data.
-
-## If you are NOT a developer:
+## If you just want to run it:
 
 ### Requirements
 
@@ -50,11 +41,11 @@ You can also use the modified version of Friture to analyze sound in real time a
 disclaimer: this software doesn't access any local file other than the Deepmind GAN, which is automatically downloaded when the software is started. Making a .exe out of a python project isn't very efficient, if anyone knows how to make it more lightweight please let me know.
 
 
-### How to start.
+### How to launch it
 
 0. IF you have a NVIDIA video card: download and install [cuda drivers](https://developer.nvidia.com/cuda-downloads) to improve Holophonor performance
 
-1. download the latest release of Holophonor from [here](https://drive.google.com/file/d/19PWCz6bl8xvrQoSWMPPgbUrheOCSqOse/view?usp=sharing) and modified version of Friture from [here](https://github.com/Novecento99/friture/releases)
+1. download the latest release of Holophonor from [here](https://drive.google.com/file/d/19PWCz6bl8xvrQoSWMPPgbUrheOCSqOse/view?usp=sharing) and the ad-hoc version of Friture from [here](https://github.com/Novecento99/friture/releases)
 
 2. Unzip the downloaded file
 
@@ -62,10 +53,10 @@ disclaimer: this software doesn't access any local file other than the Deepmind 
 
 4. If you want to use a microphone, open Friture and select the microphone you want to use.
 
-5. Enjoy your visualization!
+5. Enjoy!
 
 
-## If you are a developer:
+## If you want to develop / modify it:
 
 The software has been built as lightweight as possible, with less libraries as possible. I've tested it with Python 3.12, but it should work with other versions of Python as well.
 
@@ -77,9 +68,9 @@ pip install -r requirements.txt
 
 You will need problably need also to download Microsoft C++ BuildTools, the most clear guide I found to so is [here](https://github.com/bycloudai/InstallVSBuildToolsWindows)
 
-IF you are using a N Windows version, you'll need to install Windows Media Feature Pack, you can find how to install it [here](https://www.microsoft.com/en-us/software-download/mediafeaturepack)
+If you are using a N Windows version, you could need to install Windows Media Feature Pack, you can find how to install it [here](https://www.microsoft.com/en-us/software-download/mediafeaturepack)
 
-Also if you have a nvidia graphic card, you can install [cuda drivers](https://developer.nvidia.com/cuda-downloads) to (drastically) improve Holophonor performance
+If you have a nvidia graphic card,  install [cuda drivers](https://developer.nvidia.com/cuda-downloads) to (drastically) improve Holophonor performance
 
 
 ### LiuNet class
@@ -90,7 +81,7 @@ The Holophonor class is the main class of the framework. LiuNet instead is a wra
 
 The performances of the framework are highly dependent on the hardware you are using. 
 
-**The main question is: on which parameters does the performance of the framework depend?**
+**The main question is: which specific hardware parameters affect the performance?**
 
 ### Performance benchmarks
 
@@ -118,13 +109,10 @@ If you would like to contribute to this project, please open an issue or submit 
 
 Performance **improvements**, bug fixes and professional documentation are welcome.
 Specifically:
-- **Improve accessibility**: Make the framework more user-friendly by adding a GUI or other features that make it easier to use. Moroever, if anyone know how to make the .exe lighter, I would be happy to know.
-- **Add new types of GAN models**: Integrate new types of GAN models to create different types of visualizations.
-
-- **Deployment**: Automate the deployment process to make it easier for users to run the framework on different platforms.
-- **Performance Improvements**: Optimize the code to improve the real-time performance of the framework.
-- **Bug Fixes**: Fix any bugs or issues that you encounter while using the framework.
-- **Documentation**: Improve the documentation to make it more user-friendly and accessible to developers.
+- **Deployment**: Automate the deployment process to make it easier for users to run the framework on different platforms
+- **Improve accessibility**: Make the framework more user-friendly by adding a GUI or other features that make it easier to use. Moroever, if anyone know how to make the .exe lighter, I would be happy to know
+- **Add new types of GAN models**: Integrate new types of GAN models to create different types of visualizations
+- **Performance Improvements**: Optimize the code to improve the real-time performance of the framework
 
 
 ## Acknowledgements
