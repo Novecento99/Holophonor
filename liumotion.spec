@@ -4,10 +4,10 @@ import os
 import platform
 import sys
 
-# Add the path to the LiuMotion module
+# Add the path to the Holophonor module
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
-import liumotion  # for the version number
+import Holophonor  # for the version number
 from PyInstaller.utils.hooks import collect_data_files
 
 block_cipher = None
@@ -20,7 +20,7 @@ if platform.system() == "Windows":
 a = Analysis(['main.py'],
              pathex=pathex,
              binaries=[],
-             datas=collect_data_files('liumotion'),
+             datas=collect_data_files('Holophonor'),
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
@@ -35,12 +35,12 @@ pyz = PYZ(a.pure, a.zipped_data,
 exe = EXE(pyz,
           a.scripts,
           exclude_binaries=True,
-          name='liumotion',
+          name='Holophonor',
           debug=False,
           strip=False,
           upx=False,
           console=False,
-          icon="resources/images/liumotion.ico")
+          icon="resources/images/Holophonor.ico")
 
 coll = COLLECT(exe,
                a.binaries,
@@ -48,14 +48,14 @@ coll = COLLECT(exe,
                a.datas,
                strip=False,
                upx=False,
-               name='liumotion')
+               name='Holophonor')
 
 app = BUNDLE(coll,
-         name='liumotion.app',
-         icon='resources/images/liumotion.icns',
-         bundle_identifier="org.example.liumotion",
-         version=liumotion.__version__,
+         name='Holophonor.app',
+         icon='resources/images/Holophonor.icns',
+         bundle_identifier="org.example.Holophonor",
+         version=Holophonor.__version__,
          info_plist={
-            'NSMicrophoneUsageDescription': 'LiuMotion reads from the audio inputs to show visualizations',
-            'CFBundleVersion': liumotion.__version__
+            'NSMicrophoneUsageDescription': 'Holophonor reads from the audio inputs to show visualizations',
+            'CFBundleVersion': Holophonor.__version__
          })

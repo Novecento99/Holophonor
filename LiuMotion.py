@@ -1,10 +1,10 @@
-print("LiuMotion is importing torch...")
+print("Holophonor is importing torch...")
 import torch
 
-print("LiuMotion is importing cv2...")
+print("Holophonor is importing cv2...")
 import cv2
 
-print("LiuMotion is importing LiuNets...")
+print("Holophonor is importing LiuNets...")
 import LiuNets
 import threading
 import time
@@ -20,16 +20,16 @@ print("Modules imported...")
 
 # python 3.12
 # media feature pack for windows N
-class LiuMotion:
+class Holophonor:
     """
-    LiuMotion class handles the main functionality of the application, including
+    Holophonor class handles the main functionality of the application, including
     receiving UDP data, generating images using neural networks, and displaying
     the images in a window.
     """
 
     def __init__(self, LiuGan, udpReceiver, pixel_dimension, fullscreen=False):
         """
-        Initialize the LiuMotion class.
+        Initialize the Holophonor class.
 
         Args:
             LiuGan: The neural network model for generating images.
@@ -77,14 +77,14 @@ class LiuMotion:
         Main loop for displaying the generated images in a window.
         """
         if self.fullscreen:
-            cv2.namedWindow("LiuMotion", cv2.WND_PROP_FULLSCREEN)
+            cv2.namedWindow("Holophonor", cv2.WND_PROP_FULLSCREEN)
             cv2.setWindowProperty(
-                "LiuMotion", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN
+                "Holophonor", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN
             )
         else:
-            cv2.namedWindow("LiuMotion", cv2.WINDOW_NORMAL)
+            cv2.namedWindow("Holophonor", cv2.WINDOW_NORMAL)
             cv2.resizeWindow(
-                "LiuMotion", self.window_dimension, self.window_dimension
+                "Holophonor", self.window_dimension, self.window_dimension
             )  # Set initial window size
 
         udp_notes = threading.Thread(target=self.udp_listener)
@@ -109,8 +109,8 @@ class LiuMotion:
             image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
             if self.fullscreen:
                 screen_height, screen_width = (
-                    cv2.getWindowImageRect("LiuMotion")[3],
-                    cv2.getWindowImageRect("LiuMotion")[2],
+                    cv2.getWindowImageRect("Holophonor")[3],
+                    cv2.getWindowImageRect("Holophonor")[2],
                 )
                 aspect_ratio = image.shape[1] / image.shape[0]
                 new_width = int(screen_height * aspect_ratio)
@@ -134,7 +134,7 @@ class LiuMotion:
                     (self.window_dimension, self.window_dimension),
                     interpolation=cv2.INTER_CUBIC,
                 )
-            cv2.imshow("LiuMotion", image)
+            cv2.imshow("Holophonor", image)
             cv2.waitKey(5)
             self.shw_delay.append(1000 * (time.time() - start))
 
@@ -171,11 +171,11 @@ if __name__ == "__main__":
         elif sys.argv[1] == "custom":
             LiuNet = LiuNets.LiuCustomNet(device)
         else:
-            print("Invalid argument. Usage: python LiuMotion.py [biggan/custom]")
+            print("Invalid argument. Usage: python Holophonor.py [biggan/custom]")
             sys.exit()
     else:
         print(
-            "No argument provided. Usage: python LiuMotion.py [biggan/custom]. Going to use biggan model as default."
+            "No argument provided. Usage: python Holophonor.py [biggan/custom]. Going to use biggan model as default."
         )
         LiuNet = LiuNets.LiuBigganNet(device, "biggan-deep-256")
 
@@ -183,6 +183,6 @@ if __name__ == "__main__":
     udpReceiver = UtilityUdp.UDPReceiver("127.0.0.1", 5005)
     print("UDPReceiver created...")
     fullscreen = "--fullscreen" in sys.argv
-    motion = LiuMotion(LiuNet, udpReceiver, 800, fullscreen=False)
-    print("LiuMotion created...")
+    motion = Holophonor(LiuNet, udpReceiver, 800, fullscreen=False)
+    print("Holophonor created...")
     motion.main()

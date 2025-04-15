@@ -84,9 +84,9 @@ class LiuNet_biggan:
                 self.performance_times_gen.append(1000 * (time.time() - start))
 
     def real_time_main(self):
-        cv2.namedWindow("LiuMotion", cv2.WINDOW_NORMAL)
+        cv2.namedWindow("Holophonor", cv2.WINDOW_NORMAL)
         cv2.resizeWindow(
-            "LiuMotion", self.window_dimension, self.window_dimension
+            "Holophonor", self.window_dimension, self.window_dimension
         )  # Set initial window size
 
         udp_notes = threading.Thread(target=self.real_time_from_udp)
@@ -111,7 +111,7 @@ class LiuNet_biggan:
                 (self.window_dimension, self.window_dimension),
                 interpolation=cv2.INTER_CUBIC,
             )
-            cv2.imshow("LiuMotion", image)
+            cv2.imshow("Holophonor", image)
             cv2.waitKey(5)
             self.performance_times_shw.append(1000 * (time.time() - start))
 
@@ -143,5 +143,5 @@ class LiuNet_biggan:
 
 
 if __name__ == "__main__":
-    LiuMotion_instance = LiuNet_biggan()
-    LiuMotion_instance.real_time_main()
+    Holophonor_instance = LiuNet_biggan()
+    Holophonor_instance.real_time_main()
