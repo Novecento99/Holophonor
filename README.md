@@ -103,16 +103,6 @@ I think that Holophonor framework could be used in various applications, includi
 - **Musician Practice**: Use the framework to create visualizations that help musicians practice their pieces through a visual representation of the sound. 
 
 
-## Contributing
-
-If you would like to contribute to this project, please open an issue or submit a pull request. My objective is to maintain the framework light and user friendly, so I will be happy to accept contributions that align with this objective.
-
-Performance **improvements**, bug fixes and professional documentation are welcome.
-Specifically:
-- **Deployment**: Automate the deployment process to make it easier for users to run the framework on different platforms
-- **Improve accessibility**: Make the framework more user-friendly by adding a GUI or other features that make it easier to use. Moroever, if anyone know how to make the .exe lighter, I would be happy to know
-- **Add new types of GAN models**: Integrate new types of GAN models to create different types of visualizations
-- **Performance Improvements**: Optimize the code to improve the real-time performance of the framework
 
 
 ## Acknowledgements
@@ -120,11 +110,7 @@ Specifically:
 - [Valtellina Petra](https://www.petravaltellina.eu/) for the valuable insights from a professional musician's perspective.
 - Dad, for the endless support and  patience (and for the best omelette ever)
 
-This project was developed with the following libraries:
-- [PyTorch](https://pytorch.org/)
-- [OpenCV](https://opencv.org/)
-- [Numpy](https://numpy.org/)
-- [PyAudio](https://people.csail.mit.edu/hubert/pyaudio/)
+A special thanks to this projects:
 - [Friture](https://github.com/tlecomte/friture)
 - [Google Deepmind BigGAN](https://colab.research.google.com/drive/1rqDwIddy0eunhhV8yrznG4SNiB5XWFJJ)
 - [pytorch-pretrained-BigGAN](https://github.com/huggingface/pytorch-pretrained-BigGAN) (pytorch implementation of the tensor-flow based BigGAN)
